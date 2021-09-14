@@ -1,0 +1,81 @@
+@import '../../Misc/mixins';
+
+
+header{
+    nav{
+        @include widthAndHeight(calc(min(100%, 100%)),calc(min(7vh,7vh )));
+        @include grid(100%,80% 20%);
+        position: fixed;
+        top: 0;
+        background: radial-gradient(circle, rgb(0, 161, 62) 0%, rgb(72, 180, 0)00%);
+        box-shadow:  0 0 5px black;
+        color: white;
+        .navigation-main-full{
+            display: grid;
+            grid-template-rows: 100%;
+            grid-template-columns: repeat(5,calc(min(20%,10rem)));
+            justify-items: center;
+            align-items: center;
+            padding-left:1rem ;
+            .home{
+                font-size: 1.3rem;
+                font-weight: bold;
+            }
+        }
+        .navigation-main-mobile{
+            display: none;
+            .linksMenu{
+                @include widthAndHeight(calc(min(48%, 15rem)),calc(min(25%,15rem )));
+                @include flex(space-around,center);
+                flex-direction: column;
+                position: fixed;
+                background: radial-gradient(circle, rgb(0, 161, 62) 0%, rgb(72, 180, 0)00%);
+                top: 8.5%;
+                left: 1%;
+                border-radius: 4px;
+                z-index: 100;
+            }
+        }
+        .navigation-misc{
+            @include flex(space-around,center);
+            .cart-misc{
+                @include widthAndHeight(calc(min(50%, 3.2rem)),calc(min(90%,2.2rem )));
+                @include flex(space-around,center);
+                border-radius: 10px;
+                p{
+                    cursor: default;
+                    user-select: none
+                }
+            }
+        }
+        .authMenu{
+            @include widthAndHeight(calc(min(48%, 15rem)),calc(min(25%,7rem )));
+            @include flex(space-around,space-around);
+            flex-direction: column;
+            position: fixed;
+            background: radial-gradient(circle, rgb(0, 161, 62) 0%, rgb(72, 180, 0)00%);
+            top: 8.5%;
+            right: 1%;
+            border-radius: 4px;
+            z-index: 100;
+            p{
+                font-size: 18px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1000px) {
+    header{
+        nav{
+            .navigation-main-full{
+                display: none;
+            }
+            .navigation-main-mobile{
+                @include grid(100%,repeat(5,20%));
+                justify-items: center;
+                align-items: center;
+            }
+        }
+    }
+}

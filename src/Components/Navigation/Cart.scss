@@ -1,0 +1,37 @@
+@import '../../Misc//mixins';
+
+.backdrop{
+    @include widthAndHeight(calc(min(100%, 100vw)),calc(min(100%,100vh )));
+    @include flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    position: fixed;
+    z-index: 50;
+    .cart{
+        @include widthAndHeight(calc(min(95%, 40rem)),calc(min(85vh,85vh )));
+        @include grid(80% 10% 10%, 100%);
+        background-color: white;
+        top: 10vh;
+        right: 0;
+        z-index: 100;
+        transition: 0.5s;
+        border-radius: 4px;
+        padding: 1%;
+        .cart-items{
+            display: grid;
+            grid-auto-rows: 3.5rem;
+            overflow-y: scroll ;
+            .cart-item{
+                @include widthAndHeight(calc(min(100%,100%)),calc(min(100%,100% )));
+                border: solid black 1px;
+            }
+        }
+        .cart-total{
+
+        }
+        .close-cart{
+            justify-self: center;
+            align-self: center;
+        }
+    }
+}

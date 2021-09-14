@@ -1,0 +1,9 @@
+@import '../../Misc//mixins';
+
+.maker{
+    @include flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: blanchedalmond;
+    padding-top: 7vh;
+}

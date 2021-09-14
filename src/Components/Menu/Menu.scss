@@ -1,0 +1,34 @@
+@import '../../Misc//mixins';
+
+.menu{
+    .menu-list{
+        min-height: 93vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,22rem);
+        justify-content: center;
+        grid-auto-rows: 22rem;
+        padding: 2% 4% 2% 4%;
+        gap: 2rem;
+        .menu-list-item{
+            @include grid(repeat(20,5%),repeat(20,5%));
+            justify-items: center;
+            align-items: center;
+            .menu-list-item-title{
+                grid-area: 1 / 1 / span 3 / span 20;
+            }
+            .menu-list-item-image{
+                grid-area: 4 / 1 / span 14 / span 20;
+                @include widthAndHeight(calc(min(100%, 100%)),calc(min(100%, 100%)));
+                background-color: cornflowerblue;
+            }
+            .menu-list-item-cart{
+                grid-area: 19 / 1 / span 2 / span 10;
+                @include widthAndHeight(calc(min(95%, 95%)),calc(min(100%, 100%)));
+            }
+            .menu-list-item-price{
+                grid-area: 19 / 11 / span 2 / span 10;
+            }
+        }
+    }
+}
